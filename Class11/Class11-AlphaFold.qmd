@@ -1,0 +1,41 @@
+---
+title: "Class 11: Alpha Fold"
+author: "Kai Christman (A17522126)"
+format: pdf
+toc: true
+---
+
+I can load my PDB sequence into R to observe the structure of the protein. I will be using the bio3d package to do this.
+The downloaded PDB sequence is from ESMFold rather than ColabFold as my novel protein sequence for the Find a Gene project was not able to run in Colab. ChatGPT recommended I utilize this software instead. I was able to run and download a PDB file representing my desired protein of interest and upload it to Mol*. 
+```{r}
+
+library(bio3d)
+
+protein <- read.pdb("KAK2505744_tau_region_ESMFold.pdb")  
+
+protein
+
+```
+
+
+The following figure is used to visualize the structure of the protein. The confidence of the structure is represented by the B-factor, which is a measure of the atomic displacement or flexibility. Higher B-factors indicate regions of the protein that are more flexible or less well-defined, while lower B-factors indicate more rigid and well-defined regions. The plot shows the B-factor values along the sequence of the protein, allowing us to identify regions of high and low confidence in the predicted structure.
+```{r}
+protein$helix
+
+plotb3(protein$atom$b,
+       sse = protein,
+       typ = "l",
+       ylab = "Confidence / B-factor")
+```
+
+The following code simplifies the B-factor plot by only plotting amino acid residues, 165 in total, rather than all atoms. This allows for a clearer visualization of the confidence levels across the protein sequence, as it focuses on the alpha carbon (CA) atoms which are commonly used to represent the backbone of the protein structure.
+```{r}
+ca.inds <- atom.select(protein, elety = "CA")
+
+plotb3(protein$atom$b[ca.inds$atom],
+       typ = "l",
+       ylab = "Confidence / B-factor")
+```
+
+
+
