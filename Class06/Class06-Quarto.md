@@ -106,7 +106,7 @@ A useful function here is the “base R” `sample()` function:
 sample(1:5, size = 5, replace = TRUE)
 ```
 
-    [1] 5 5 5 3 4
+    [1] 3 2 3 1 3
 
 We can use `sample()` to make a random nucleotide sequence if we dram
 from “A”, “C”, “G”, and “T” …
@@ -115,7 +115,7 @@ from “A”, “C”, “G”, and “T” …
 sample( x = c("A", "C", "G", "T"), size = 12, replace = TRUE )
 ```
 
-     [1] "A" "T" "A" "G" "T" "A" "G" "A" "C" "C" "C" "C"
+     [1] "T" "T" "G" "T" "C" "G" "G" "C" "C" "T" "A" "A"
 
 > **Q2**: Write a function `generate_dna()` that returns a random DNA
 > sequence of a length specified by the user.
@@ -136,12 +136,12 @@ generate_dna <- function(len = 10) {
 generate_dna(len=100)
 ```
 
-      [1] "C" "C" "G" "C" "A" "T" "C" "A" "C" "G" "G" "T" "G" "G" "T" "A" "G" "G"
-     [19] "A" "G" "T" "G" "C" "C" "G" "C" "T" "G" "A" "G" "C" "G" "C" "G" "A" "T"
-     [37] "T" "T" "C" "A" "A" "G" "C" "T" "T" "G" "C" "G" "G" "A" "T" "A" "T" "T"
-     [55] "T" "T" "G" "T" "T" "A" "C" "C" "C" "C" "G" "T" "G" "G" "A" "T" "C" "T"
-     [73] "T" "A" "T" "C" "G" "G" "G" "C" "T" "T" "G" "T" "A" "T" "A" "T" "T" "G"
-     [91] "G" "G" "G" "C" "C" "A" "A" "C" "A" "T"
+      [1] "A" "C" "G" "G" "C" "T" "G" "T" "C" "A" "A" "G" "C" "A" "T" "T" "G" "C"
+     [19] "A" "G" "A" "A" "G" "G" "C" "G" "A" "G" "C" "T" "C" "T" "G" "C" "T" "C"
+     [37] "A" "C" "C" "G" "A" "A" "G" "G" "G" "C" "G" "C" "G" "C" "C" "A" "G" "T"
+     [55] "C" "C" "C" "T" "C" "C" "T" "A" "C" "C" "A" "G" "A" "C" "G" "C" "G" "C"
+     [73] "T" "G" "C" "C" "A" "A" "A" "C" "C" "A" "C" "G" "A" "T" "T" "A" "T" "A"
+     [91] "T" "T" "T" "T" "A" "G" "G" "G" "C" "G"
 
 > **Q2B**: Your second version should **optionally** be able to return
 > either a multi-element vector of single character nucleotides (as
@@ -163,7 +163,7 @@ generate_dna <- function(len, single.element = TRUE) {
 generate_dna(len = 5, single.element = TRUE)
 ```
 
-    [1] "ATAAC"
+    [1] "ACTTA"
 
 (Functions that could be useful are `paste()`, `if()`, `cat()`, and
 `return()`)
@@ -193,7 +193,7 @@ generate_dna(len = 44)
 ```
 
     >len44
-    CTGTACCTATGCCTTTTCCACTACGTTCCGTGGTAGGCGGTACC
+    GGTGAGTCTGAGGTATATCCTCTGTTCCCCGCTTCAGCACTGCG
 
 ## Write a `generate_protein()` function
 
@@ -223,7 +223,7 @@ generate_protein <- function(len, single.element = TRUE) {
 generate_protein(20)
 ```
 
-    [1] "EYVKEPFSSRMFFQRQPVFA"
+    [1] "WFHWFVWCEPLWCGKYHLHE"
 
 ## Generate random protein sequences of length 6 to 13
 
@@ -243,21 +243,21 @@ for(l in 6:13) {
 ```
 
     >6
-    MMEMRV 
+    ISDVNI 
     >7
-    RFHHPYN 
+    TELLECF 
     >8
-    CHANEANP 
+    EMWEAKCS 
     >9
-    CCWVMVYPY 
+    RTLLNWATL 
     >10
-    HTATESWLYI 
+    IVNKTQIDQA 
     >11
-    SPAQHLTIVRE 
+    WPYHIQEQNGL 
     >12
-    DFYMYFQWKHEY 
+    EGQEYCAGMSCF 
     >13
-    TYHHGQHVNRHDK 
+    DCMAFATVICMYY 
 
 ## Are these peptides “unique in nature”?
 
