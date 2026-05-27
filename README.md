@@ -4,7 +4,7 @@ My classwork from [BIMM143 at UC San Diego Spring 2026](https://bioboot.github.i
 
 ## Index of Course Work
 
-Class 6: [R Functions](Class06/Class06-quarto.qmd)
+Class 6: [R Functions](Class06/Class06-Quarto.html)
 
 Class 7: [Introduction to Machine Learning](Class07/MachineLearning1.html)
 
